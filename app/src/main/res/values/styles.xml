@@ -1,11 +1,15 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/indigo_500</item>
         <item name="colorPrimaryDark">@color/indigo_700</item>
         <item name="colorAccent">@color/pink_a200</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+    <style name="AppTheme.Home">
+        <item name="android:windowExitTransition">@transition/grid_exit</item>
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>

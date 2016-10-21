@@ -10,13 +10,17 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".RecyclerAnimActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AnimTransitionActivity"
+            android:label="@string/transition_name"
+            android:supportsRtl="true"></activity>
     </application>
 
 </manifest>
