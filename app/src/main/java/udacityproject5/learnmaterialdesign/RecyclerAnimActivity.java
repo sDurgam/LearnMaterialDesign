@@ -1,21 +1,24 @@
 package udacityproject5.learnmaterialdesign;
 
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by root on 10/19/16.
  */
 
-public class RecyclerAnimActivity extends FragmentActivity
+public class RecyclerAnimActivity extends AppCompatActivity
 {
-    RecyclerView rv;
+    @BindView(R.id.recyclerview) RecyclerView rv;
     Context mcontext;
 
     @Override
@@ -23,17 +26,17 @@ public class RecyclerAnimActivity extends FragmentActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.anim_recyclerview_layout);
-        rv = (RecyclerView) findViewById(R.id.recyclerview);
+        ButterKnife.bind(this);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(new RecyclerAnimAdapter(this));
         mcontext = this;
     }
 
-    public void fabClick(View view)
+    @OnClick(R.id.fab)  void fabClick(View view)
     {
-        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
+       // Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
         Intent animIntent = new Intent(mcontext, AnimTransitionActivity.class);
-        mcontext.startActivity(animIntent, bundle);
+        mcontext.startActivity(animIntent);
     }
 
 }

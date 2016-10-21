@@ -19,8 +19,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".AnimTransitionActivity"
+            android:parentActivityName=".RecyclerAnimActivity"
             android:label="@string/transition_name"
-            android:supportsRtl="true"></activity>
+            android:supportsRtl="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".RecyclerAnimActivity" />
+        </activity>
+        <activity android:name=".DisplayGalleryActivity"
+            android:parentActivityName=".AnimTransitionActivity"
+            android:label="@string/shared_element_transition_demo">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AnimTransitionActivity"></meta-data>
+        </activity>
     </application>
 
 </manifest>
